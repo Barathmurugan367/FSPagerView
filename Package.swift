@@ -4,13 +4,19 @@ import PackageDescription
 let package = Package(
     name: "FSPagerView",
     platforms: [
-        .iOS(.v12)
+        .iOS(.v10)
     ],
     products: [
-        .library(name: "FSPagerView", targets: ["FSPagerView"]),
+        .library(
+            name: "FSPagerView",
+            targets: ["FSPagerView"]),
     ],
     targets: [
-        .target(name: "FSPagerView", path: "Sources", exclude: ["FSPagerViewObjcCompat.h", "FSPagerViewObjcCompat.m"]),
-    ],
-    swiftLanguageVersions: [.v5]
+        .target(
+            name: "FSPagerView",
+            path: "Sources",
+            exclude: [],
+            resources: [.process("FSPagerView.bundle")]
+        )
+    ]
 )
